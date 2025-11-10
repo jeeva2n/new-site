@@ -17,7 +17,7 @@
   max-width: 1400px;
   width: 90%;
   height: 100%;
-  padding: 2rem;
+  padding: 0rem;
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
 }
 
@@ -159,6 +159,6 @@
   }
 
   .home-wrapper {
-    padding: 1rem;
+    padding: 0rem;
   }
 }

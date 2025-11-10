@@ -23,41 +23,41 @@ const Home = () => {
   };
 
   const cards = [
-    {
-      id: 1,
-      title: "We",
-      subtitle: "simplify",
-      subtitle2: "production",
-      color: "#8FFF00",
-      image: "/images/machinery1.jpg",
-      description:
-        "From proven hand operated machines to complete automation lines, ZAHORANSKY is the right choice",
-      buttons: ["Home", "Broom & Brush", "HealthCare"],
-    },
-    {
-      id: 2,
-      title: "We",
-      subtitle: "deliver",
-      subtitle2: "solutions",
-      color: "#FF0066",
-      image: "/images/machinery2.jpg",
-    },
-    {
-      id: 3,
-      title: "We",
-      subtitle: "automate",
-      subtitle2: "molds",
-      color: "#FF00FF",
-      image: "/images/machinery3.jpg",
-    },
-    {
-      id: 4,
-      title: "We",
-      subtitle: "are",
-      subtitle2: "ZAHO",
-      color: "#00FFFF",
-      image: "/images/team.jpg",
-    },
+  {
+    id: 1,
+    title: "We",
+    subtitle: "inspect",
+    subtitle2: "with precision",
+    color: "#8FFF00",
+    image: "/src/assets/primary/ep1.jpg",
+    description:
+      "From ultrasonic testing to advanced radiography, we ensure your products meet the highest quality standards.",
+    buttons: ["Home", "Aerospace", "Oil & Gas"],
+  },
+  {
+    id: 2,
+    title: "We",
+    subtitle: "deliver",
+    subtitle2: "reliable results",
+    color: "#FF0066",
+    image: "/src/assets/primary/ep2.webp",
+  },
+  {
+    id: 3,
+    title: "We",
+    subtitle: "analyze",
+    subtitle2: "materials",
+    color: "#FF00FF",
+    image: "/src/assets/primary/q1.jpeg",
+  },
+  {
+    id: 4,
+    title: "We",
+    subtitle: "are",
+    subtitle2: "NDT Experts",
+    color: "#00FFFF",
+    image: "/src/assets/primary/q4.jpg",
+  },
   ];
 
   return (

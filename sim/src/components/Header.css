@@ -8,6 +8,7 @@
   width: 90%;
   max-width: 1400px;
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 
 /* Flex Layout */
@@ -15,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* Logo */
@@ -77,6 +79,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .language-selector,
@@ -124,78 +127,250 @@
   background-color: #f3f6fa;
 }
 
-/* Contact Modal Overlay */
-.contact-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-/* Contact Form Box */
-.contact-modal {
-  background-color: white;
-  border-radius: 10px;
-  padding: 2rem;
-  width: 90%;
-  max-width: 600px;
+/* Contact Dropdown Trigger */
+.contact-dropdown-trigger {
   position: relative;
 }
 
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
+/* Centered Contact Panel Dropdown - FIXED POSITIONING */
+.contact-panel-dropdown {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 1200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  padding: 40px;
+  z-index: 9999;
+  border: 1px solid #e0e4eb;
+  border-top: 3px solid #004aad;
+  display: flex;
+  gap: 60px;
+  min-height: 350px;
 }
 
-/* Contact Form Fields */
-.contact-form {
+/* Left Section - Company Information */
+.contact-company-info {
+  flex: 1.2;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 35px;
+  padding-right: 40px;
+  border-right: 1px solid #eaeaea;
 }
 
-.form-group {
+.company-section {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 12px;
 }
 
-.form-group label {
-  font-size: 0.9rem;
-  color: #555;
+.company-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #004aad;
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
-.form-group input,
-.form-group textarea {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.company-subtitle {
   font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  font-style: normal;
 }
 
-.submit-btn {
-  padding: 0.8rem;
+.company-address {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.company-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 12px 0;
+  font-family: 'Courier New', monospace;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+  margin: 15px 0;
+}
+
+/* Right Section - Get in Touch */
+.contact-get-in-touch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.get-in-touch-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 30px 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #004aad;
+  letter-spacing: -0.5px;
+}
+
+/* Contact Panel Items */
+.contact-panel-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+
+.contact-panel-item:hover {
+  background-color: #fafbfc;
+  margin: 0 -15px;
+  padding: 20px 15px;
+  border-radius: 8px;
+}
+
+.contact-panel-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item-image {
+  width: 100px;
+  height: 80px;
+  min-width: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-item-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.contact-item-info h4 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2d3748;
+  letter-spacing: -0.3px;
+}
+
+.contact-item-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+}
+
+.contact-link {
+  font-weight: 600;
+  color: #004aad;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-link:hover {
+  color: #003c91;
+  transform: translateX(3px);
+}
+
+.contact-link::after {
+  content: "→";
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.contact-link:hover::after {
+  transform: translateX(3px);
+}
+
+.link-group {
+  display: flex;
+  gap: 25px;
+}
+
+.link-group .contact-link {
+  margin-right: 0;
+}
+
+/* Career Section Additional Info */
+.career-additional {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.career-text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+.career-links {
+  display: flex;
+  gap: 20px;
+}
+
+.career-link {
+  font-weight: 600;
+  color: #004aad;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border: 2px solid #004aad;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.career-link:hover {
   background-color: #004aad;
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease;
+}
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.submit-btn:hover {
-  background-color: #003c91;
+.logo-image {
+  height: 40px;           /* Adjust height for your design */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05); /* Small zoom on hover */
 }

@@ -1,0 +1,215 @@
+/* home.css */
+
+.home-container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent content from spilling out */
+  flex-grow: 1; /* CRITICAL: This makes the container fill space */
+  min-height: 0; /* Necessary for flex-grow to work correctly in all browsers */
+}
+
+/* Matches header/footer look */
+.home-wrapper {
+  border-radius: 10px;
+  max-width: 1400px;
+  width: 90%;
+  height: 100%;
+  padding: 0;
+}
+
+
+/* Card layout */
+.cards-wrapper {
+  display: flex;
+  height: 75vh;
+  gap: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 80px;
+}
+
+.card.expanded {
+  flex: 3;
+}
+
+.card.collapsed {
+  flex: 0.5;
+}
+
+.card-image-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  color: #fff;
+  z-index: 2;
+}
+
+.card-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.card-details {
+  margin-top: 1.5rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease-out, max-height 0.4s ease-out;
+}
+
+/* Show details when card is expanded */
+.card.expanded .card-details {
+  opacity: 1;
+  max-height: 200px; /* Adjust as needed */
+  animation: fadeIn 0.5s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.card-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-button {
+  background: transparent;
+  border: 2px solid #8FFF00;
+  color: #8FFF00;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-button:hover {
+  background: #8FFF00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+
+/* =================================== */
+/* ========== RESPONSIVE CSS ========= */
+/* =================================== */
+
+@media (max-width: 1024px) {
+    .cards-wrapper {
+        height: 70vh; /* Slightly smaller height on tablets */
+    }
+    .card-title {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* --- Mobile View --- */
+@media (max-width: 768px) {
+  .home-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  
+  .cards-wrapper {
+    flex-direction: column; /* Stack cards vertically */
+    height: 100%; /* Fill the available height */
+    gap: 0.5rem;
+  }
+
+  .card {
+    flex: 1; /* CRITICAL: Each card takes equal vertical space */
+    min-height: 0; /* CRITICAL: Allows cards to shrink properly */
+    min-width: unset; /* Reset min-width */
+    width: 100%;
+  }
+
+  /* Disable horizontal expand/collapse logic on mobile */
+  .card.expanded,
+  .card.collapsed {
+    flex: 1;
+  }
+  
+  /* Make details always visible on mobile since there is no hover/expand */
+  .card-details {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 1rem;
+    animation: none; /* Disable animation on load */
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    /* Hide long descriptions to prevent overflow */
+    display: -webkit-box;
+   
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
+  .card-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

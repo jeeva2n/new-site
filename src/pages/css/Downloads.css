@@ -1,0 +1,193 @@
+.downloads-page {
+  min-height: calc(100vh - 130px);
+}
+
+.downloads-header {
+  height: 300px;
+  background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: darken;
+  position: relative;
+}
+
+.downloads-header .overlay {
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.downloads-header h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.downloads-header p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.downloads-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.download-categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.category-tab {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-weight: 500;
+}
+
+.category-tab:hover {
+  color: #333;
+}
+
+.category-tab.active {
+  border-bottom: 3px solid #8eff00;
+  color: #333;
+}
+
+.download-search {
+  display: flex;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.download-search input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.download-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.download-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.download-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-icon {
+  flex: 0 0 50px;
+  height: 50px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/pdf.png');
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.download-info {
+  flex: 1;
+}
+
+.download-info h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.download-info p {
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.download-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.download-btn {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .downloads-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .downloads-content {
+    padding: 2rem 1rem;
+  }
+  
+  .download-categories {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .downloads-header {
+    height: 250px;
+  }
+  
+  .downloads-header h1 {
+    font-size: 2rem;
+  }
+  
+  .download-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .download-search {
+    flex-direction: column;
+  }
+  
+  .download-search input {
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-btn {
+    border-radius: 4px;
+  }
+}

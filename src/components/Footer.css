@@ -1,0 +1,105 @@
+/* footer.css */
+
+.footer {
+  background-color: #edeff3;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 12px 25px;
+  max-width: 1400px;
+  width: 90%;
+  font-family: "Poppins", sans-serif;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Left Nav */
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #004aad;
+}
+
+/* Right Social Icons */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: white;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #004aad;
+}
+
+/* Specific color accents */
+.social-icon.linkedin:hover { background-color: #0077b5; }
+.social-icon.instagram:hover { background-color: #e1306c; }
+.social-icon.facebook:hover { background-color: #1877f2; }
+.social-icon.youtube:hover { background-color: #ff0000; }
+
+/* =================================== */
+/* ========== RESPONSIVE CSS ========= */
+/* =================================== */
+
+@media (max-width: 900px) {
+  .footer {
+    border-radius: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .footer-nav ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav ul {
+    gap: 15px; /* Reduce gap between links */
+  }
+
+  .footer-nav a {
+    font-size: 13px; /* Slightly smaller font */
+  }
+}

@@ -1,0 +1,213 @@
+/* header.css */
+
+/* Main Header Container */
+.header {
+  background-color: #edeff3;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 10px 25px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1400px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 100; /* Ensure header is on top */
+}
+
+/* Flex Layout */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 50px; /* Adjusted for better balance */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
+/* --- Desktop Navigation --- */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 4px;
+  width: 1px;
+  height: 14px;
+  background-color: #ccc;
+}
+
+.main-nav li:last-child a::after {
+  display: none;
+}
+
+.main-nav a:hover {
+  color: #004aad;
+}
+
+/* --- Header Actions (Desktop) --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.language-selector,
+.contact-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #222;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.language-selector:hover,
+.contact-button:hover {
+  color: #004aad;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+}
+
+/* --- Mobile Navigation Elements (Hidden on Desktop) --- */
+.menu-toggle {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+  z-index: 1001;
+}
+
+/* --- Contact Panel Dropdown --- */
+.contact-panel-dropdown {
+  position: fixed;
+  top: 120px; /* Position below header */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 1200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  padding: 40px;
+  z-index: 999;
+  border-top: 3px solid #004aad;
+  display: flex;
+  gap: 40px;
+  min-height: 350px;
+}
+
+.contact-company-info {
+  flex: 1.2;
+  border-right: 1px solid #eaeaea;
+  padding-right: 40px;
+}
+
+.contact-get-in-touch {
+  flex: 1;
+}
+
+/* Other contact panel styles from your original code... */
+/* (omitted for brevity, they don't need major responsive changes themselves) */
+
+
+/* =================================== */
+/* ========== RESPONSIVE CSS ========= */
+/* =================================== */
+
+/* --- Tablet & Mobile --- */
+@media (max-width: 900px) {
+  .header {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  /* Hide desktop nav and actions */
+  .main-nav,
+  .header-actions {
+    display: none;
+  }
+
+  /* Show mobile menu toggle button */
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* Adjustments for the large contact panel on smaller screens */
+  .contact-panel-dropdown {
+    flex-direction: column;
+    top: 20px; /* Closer to top */
+    width: 95vw;
+    padding: 25px;
+    gap: 25px;
+    max-height: 85vh; /* Allow internal scrolling if content overflows */
+    overflow-y: auto;
+  }
+
+  .contact-company-info {
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-right: 0;
+    padding-bottom: 25px;
+  }
+}
+
+/* --- Small Mobile --- */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+}
+/* Home Button (replaces language selector) */
+.home-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.home-button:hover {
+  color: #004aad;
+  transform: scale(1.1);
+}

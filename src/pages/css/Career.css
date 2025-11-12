@@ -1,0 +1,242 @@
+/* ===============================
+   Career Page Styles
+   =============================== */
+
+.career-page {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+  background-color: #f9fafc;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER SECTION ===== */
+.career-header {
+  position: relative;
+  height: 60vh;
+  background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.career-header .overlay {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 700px;
+}
+
+.career-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.career-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.career-content {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== INTRO SECTION ===== */
+.intro-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.intro-section p {
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== BENEFITS SECTION ===== */
+.benefits-section {
+  margin-bottom: 4rem;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-color: #0072ff1a;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.development-icon {
+  background-image: url("https://img.icons8.com/ios-filled/100/0072ff/learning.png");
+}
+
+.balance-icon {
+  background-image: url("https://img.icons8.com/ios-filled/100/0072ff/balance.png");
+}
+
+.global-icon {
+  background-image: url("https://img.icons8.com/ios-filled/100/0072ff/globe.png");
+}
+
+.compensation-icon {
+  background-image: url("https://img.icons8.com/ios-filled/100/0072ff/money-bag.png");
+}
+
+.benefit-item h3 {
+  color: #222;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ===== OPENINGS SECTION ===== */
+.openings-section {
+  margin-bottom: 4rem;
+}
+
+.openings-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.job-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+  color: #0072ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.job-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.job-details span {
+  background: #f1f5fb;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.job-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.apply-btn {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.apply-btn:hover {
+  background: linear-gradient(135deg, #005be0, #00aee0);
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .career-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .career-header p {
+    font-size: 1rem;
+  }
+
+  .career-content {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-header {
+    height: 50vh;
+  }
+
+  .career-header .overlay {
+    padding: 1.5rem;
+  }
+
+  .benefits-grid,
+  .job-list {
+    grid-template-columns: 1fr;
+  }
+}

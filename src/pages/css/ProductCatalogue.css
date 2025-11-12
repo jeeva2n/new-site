@@ -1,0 +1,142 @@
+.product-catalogue {
+  padding: 3rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 130px);
+}
+
+.product-catalogue h1 {
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.catalogue-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.category-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-image {
+  height: 180px;
+  background-color: #f5f5f5;
+  background-size: cover;
+  background-position: center;
+}
+
+.personal-care-img {
+  background-image: url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+}
+
+.broom-brush-img {
+  background-image: url('https://images.unsplash.com/photo-1585421514738-01798e348b17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+}
+
+.healthcare-img {
+  background-image: url('https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+}
+
+.automation-img {
+  background-image: url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+}
+
+.category-card h3 {
+  padding: 1.5rem 1rem 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.category-card p {
+  padding: 0 1rem 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.category-link {
+  display: block;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.category-link:hover {
+  background-color: #333;
+  color: white;
+}
+
+.catalogue-downloads {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 3rem;
+}
+
+.catalogue-downloads h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.download-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.download-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.download-btn.primary {
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+}
+
+.download-btn.primary:hover {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .product-catalogue {
+    padding: 2rem 1rem;
+  }
+  
+  .download-options {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    min-height: auto;
+  }
+}

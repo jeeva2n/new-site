@@ -1,0 +1,198 @@
+.service-page {
+  min-height: calc(100vh - 130px);
+}
+
+.service-header {
+  height: 300px;
+  background-image: url('https://images.unsplash.com/photo-1517245386807-9b4c3e46a1a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: darken;
+  position: relative;
+}
+
+.service-header .overlay {
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.service-header h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-header p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.service-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.service-intro h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.service-intro p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tech-support-icon {
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/online-support.png');
+}
+
+.maintenance-icon {
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/maintenance.png');
+}
+
+.spare-parts-icon {
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/gears.png');
+}
+
+.training-icon {
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/training.png');
+}
+
+.upgrade-icon {
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/update.png');
+}
+
+.emergency-icon {
+  background-image: url('https://img.icons8.com/ios-filled/50/000000/siren.png');
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.service-link {
+  display: inline-block;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid #8eff00;
+  transition: all 0.3s ease;
+}
+
+.service-link:hover {
+  color: #8eff00;
+}
+
+.service-contact {
+  background-color: #f9f9f9;
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.service-contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-option {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact-option h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact-option p {
+  color: #555;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .service-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .service-content {
+    padding: 2rem 1rem;
+  }
+  
+  .service-contact {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-header {
+    height: 250px;
+  }
+  
+  .service-header h1 {
+    font-size: 2rem;
+  }
+  
+  .service-card {
+    padding: 1.5rem;
+  }
+}

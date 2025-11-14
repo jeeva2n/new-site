@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEnvelope, FaPhone, FaHome } from "react-icons/fa";
+import { FaInfoCircle , FaPhone, FaHome } from "react-icons/fa";
 import "./Header.css";
 
 function Header() {
@@ -8,19 +8,19 @@ function Header() {
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
-    navigate("/"); // Navigate to home
+    navigate("/");
   };
 
   return (
     <header className="header">
       <div className="header-container">
-   
+
         {/* Logo */}
         <div className="logo">
           <Link to="/">
             <img
               src="./src/assets/primary/daks.png"
-              alt="ZAHORANSKY Logo"
+              alt="DAKS NDT Services Logo"
               className="logo-image"
             />
           </Link>
@@ -38,9 +38,11 @@ function Header() {
           </ul>
         </nav>
 
+
         {/* Actions */}
         <div className="header-actions">
-          {/* ✅ Home Button (Replaces Language Selector) */}
+
+          {/* Home Button */}
           <div className="home-button" onClick={handleHomeClick}>
             <FaHome />
           </div>
@@ -56,126 +58,125 @@ function Header() {
             onMouseEnter={() => setContactOpen(true)}
             onMouseLeave={() => setContactOpen(false)}
           >
-            <FaEnvelope />
+            <FaInfoCircle />
             <span className="dropdown-arrow">▼</span>
 
             {contactOpen && (
               <div className="contact-panel-dropdown">
+
                 {/* Left Section - Company Information */}
                 <div className="contact-company-info">
                   <div className="company-section">
-                    <h3 className="company-title">ZAHOBANSSY AG</h3>
-                    <p className="company-subtitle">Intelligent for Group</p>
-                    <p className="company-address">
-                      Action-Zahoranday-Straise 1<br />
-                      79542 Technical-Geschneerd<br />
-                      Germany
+                    <h3 className="company-title">DAKS NDT Services</h3>
+
+                    <p className="company-subtitle">
+                      Advanced Non-Destructive Testing Solutions • Inspection • Safety • Reliability
                     </p>
+                    <p className="contact-label">Address</p>
+                    <p className="company-address">
+                      Babu Garden, No.163,<br />
+                      Narasimman Street, 2nd St,<br />
+                      Sikkarayapuram, Tamil Nadu 600128<br />
+                      India
+                    </p>
+
                     <div className="company-contact">
                       <p className="contact-label">Phone</p>
-                      <p className="contact-value">(+49) 7071 997 0</p>
-                      <p className="contact-label">Mail</p>
-                      <p className="contact-value">info@zahoranday.com</p>
+                      <p className="contact-value">087784 23621</p>
+
+                      <p className="contact-label">Email</p>
+                      <p className="contact-value">jeevaoff22@gmail.com</p>
+
+                      <p className="contact-label">Hours</p>
+                      <p className="contact-value">Open 24 Hours</p>
                     </div>
                   </div>
 
                   <div className="divider"></div>
-
+                  <br />
                   <div className="company-section">
-                    <h3 className="company-title">ZAHOBANSSY</h3>
-                    <p className="company-subtitle">Automatic & Mobile GmbH</p>
-                    <p className="company-address">
-                      Bebelstrasse 11a<br />
-                      79108 Freiburg im Breitgau<br />
-                      Germany
-                    </p>
-                    <div className="company-contact">
-                      <p className="contact-label">Phone</p>
-                      <p className="contact-value">(+49) 761 705 0</p>
-                      <p className="contact-label">Mail</p>
-                      <p className="contact-value">info@zahoranday.com</p>
-                    </div>
+                    <h3 className="company-title">NDT Services Offered</h3>
+
+                    <ul className="ndt-services-list">
+                      <li>Ultrasonic Testing (UT)</li>
+                      <li>Radiographic Testing (RT)</li>
+                      <li>Magnetic Particle Testing (MT)</li>
+                      <li>Dye Penetrant Testing (PT)</li>
+                      <li>Visual Inspection (VT)</li>
+                      <li>Eddy Current Testing (ECT)</li>
+                    </ul>
                   </div>
                 </div>
 
                 {/* Right Section - Get in Touch */}
                 <div className="contact-get-in-touch">
-                  <h3 className="get-in-touch-heading">Get in touch with us</h3>
+                  <h3 className="get-in-touch-heading">Get in Touch With Us</h3>
 
-                  {/* Block 1: Customer Service */}
+                  {/* Block 1: NDT Inspection Support */}
                   <div className="contact-panel-item">
                     <img
-                      src="/images/customer-service.jpg"
-                      alt="Customer Service"
+                      src="./src/assets/primary/h1.png"
+                      alt="NDT Support"
                       className="contact-item-image"
                     />
                     <div className="contact-item-info">
-                      <h4>Customer Service</h4>
+                      <h4>NDT Inspection Support</h4>
                       <p>
-                        Competent customer service by ZAHOBANSSY, anywhere on earth.
+                        Reliable testing, expert technicians, and fast service — anytime, guaranteed quality.
                       </p>
-                      <Link to="/service" className="contact-link">
-                        Service
-                      </Link>
+                      {/* Optional link */}
+                      {/* <Link to="/support" className="contact-link">Support</Link> */}
                     </div>
                   </div>
 
-                  {/* Block 2: Contact & Locations */}
+                  {/* Block 2: Contact & Service Areas */}
                   <div className="contact-panel-item">
                     <img
-                      src="/images/contact-location.jpg"
-                      alt="Contact & Locations"
+                      src="./src/assets/primary/h2.png"
+                      alt="Service Areas"
                       className="contact-item-image"
                     />
                     <div className="contact-item-info">
-                      <h4>Contact & Locations</h4>
+                      <h4>Contact & Service Areas</h4>
                       <p>
-                        Reach out for assistance, inquiries, or just to say hello!
+                        We provide on-site NDT services across Tamil Nadu and throughout India, wherever your project is located.
                       </p>
                       <div className="link-group">
-                        <Link to="/contact" className="contact-link">
-                          Contact
-                        </Link>
-                        <Link to="/locations" className="contact-link">
-                          Locations
-                        </Link>
+                        {/* Optional links */}
+                        {/* <Link to="/contact" className="contact-link">Contact</Link> */}
+                        {/* <Link to="/service-areas" className="contact-link">Service Areas</Link> */}
                       </div>
                     </div>
                   </div>
 
-                  {/* Block 3: Career */}
+                  {/* Block 3: Careers */}
                   <div className="contact-panel-item">
                     <img
-                      src="/images/career.jpg"
+                      src="./src/assets/primary/h3.png"
                       alt="Career"
                       className="contact-item-image"
                     />
                     <div className="contact-item-info">
-                      <h4>Career</h4>
-                      <p>Become a part of the ZAHOBANSSY family!</p>
-                      <Link to="/career" className="contact-link">
-                        Career
-                      </Link>
+                      <h4>Careers</h4>
+                      <p>
+                        Join our dedicated team of NDT professionals and build your career at the forefront of quality assurance.
+                      </p>
+                      {/* Optional link */}
+                      {/* <Link to="/career" className="contact-link">Apply Now</Link> */}
                     </div>
                   </div>
 
-                  {/* Additional Career Info */}
+                  {/* Additional Info */}
                   <div className="career-additional">
-                    <p className="career-text">
-                      Shape the future of a globally active and innovative technology provider!
+                    <p className="career-text animated-text">
+                      Build your future in a high-demand industry with DAKS NDT Services.
                     </p>
-                    <div className="career-links">
-                      <Link to="/company" className="career-link">
-                        Company
-                      </Link>
-                      <Link to="/open-positions" className="career-link">
-                        Open positions
-                      </Link>
-                    </div>
+
                   </div>
                 </div>
               </div>
             )}
+
           </div>
         </div>
       </div>

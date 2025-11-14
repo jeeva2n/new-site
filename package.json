@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "sim",
   "version": "1.0.0",
   "private": true,
@@ -13,14 +12,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.5"
+    "react-router-dom": "^7.9.5",
+    "lucide-react": "^0.553.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.4",
     "vite": "^7.0.0"
-=======
-  "dependencies": {
-    "lucide-react": "^0.553.0"
->>>>>>> 31a2bbb6850d1de841cf2ad29ca42a3186a34c1b
   }
 }

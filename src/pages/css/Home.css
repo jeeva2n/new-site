@@ -1,4 +1,6 @@
-/* home.css */
+/* ------------------------------------------------------ */
+/* HOME MAIN CONTAINER                                    */
+/* ------------------------------------------------------ */
 
 .home-container {
   width: 100%;
@@ -7,22 +9,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevent content from spilling out */
-  flex-grow: 1; /* CRITICAL: This makes the container fill space */
-  min-height: 0; /* Necessary for flex-grow to work correctly in all browsers */
+  overflow: hidden;
+  flex-grow: 1;
+  min-height: 0;
 }
 
-/* Matches header/footer look */
+/* Wrapper with centered layout and modern spacing */
 .home-wrapper {
-  border-radius: 10px;
+  border-radius: 12px;
   max-width: 1400px;
-  width: 90%;
+  width: 92%;
   height: 100%;
   padding: 0;
+  margin: auto;
 }
 
+/* ------------------------------------------------------ */
+/* CARD LAYOUT                                             */
+/* ------------------------------------------------------ */
 
-/* Card layout */
 .cards-wrapper {
   display: flex;
   height: 75vh;
@@ -34,11 +39,11 @@
 .card {
   position: relative;
   flex: 1;
+  min-width: 100px;
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  min-width: 80px;
+  transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card.expanded {
@@ -48,6 +53,10 @@
 .card.collapsed {
   flex: 0.5;
 }
+
+/* ------------------------------------------------------ */
+/* IMAGE + OVERLAY                                         */
+/* ------------------------------------------------------ */
 
 .card-image-wrapper {
   position: absolute;
@@ -65,47 +74,59 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.75) 100%
   );
 }
+
+/* ------------------------------------------------------ */
+/* CARD TEXT CONTENT                                       */
+/* ------------------------------------------------------ */
 
 .card-content {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2rem;
+  padding: 2.2rem;
   color: #fff;
   z-index: 2;
 }
 
 .card-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
+.card-subtitle,
+.card-subtitle2 {
+  font-size: 1.7rem;
+  margin: 0.2rem 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* DETAILS REVEAL */
 .card-details {
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.4s ease-out, max-height 0.4s ease-out;
 }
 
-/* Show details when card is expanded */
 .card.expanded .card-details {
   opacity: 1;
-  max-height: 200px; /* Adjust as needed */
-  animation: fadeIn 0.5s ease-in-out forwards;
-  animation-delay: 0.2s;
+  max-height: 220px;
+  animation: fadeIn 0.45s ease-in-out forwards;
+  animation-delay: 0.12s;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -113,9 +134,9 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
+/* BUTTONS */
 .card-buttons {
   display: flex;
   gap: 1rem;
@@ -131,7 +152,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .card-button:hover {
@@ -140,54 +161,78 @@
   transform: scale(1.05);
 }
 
+/* ------------------------------------------------------ */
+/* RESPONSIVE — LAPTOPS                                   */
+/* ------------------------------------------------------ */
 
-/* =================================== */
-/* ========== RESPONSIVE CSS ========= */
-/* =================================== */
-
-@media (max-width: 1024px) {
-    .cards-wrapper {
-        height: 70vh; /* Slightly smaller height on tablets */
-    }
-    .card-title {
-        font-size: 2.2rem;
-    }
+@media (max-width: 1280px) {
+  .cards-wrapper {
+    height: 72vh;
+  }
+  .card-title {
+    font-size: 2.6rem;
+  }
+  .card-subtitle,
+  .card-subtitle2 {
+    font-size: 1.5rem;
+  }
 }
 
+/* ------------------------------------------------------ */
+/* RESPONSIVE — TABLETS                                    */
+/* ------------------------------------------------------ */
 
-/* --- Mobile View --- */
+@media (max-width: 1024px) {
+  .cards-wrapper {
+    height: 68vh;
+  }
+  .card-title {
+    font-size: 2.3rem;
+  }
+  .card-subtitle,
+  .card-subtitle2 {
+    font-size: 1.4rem;
+  }
+  .card-content {
+    padding: 1.8rem;
+  }
+}
+
+/* ------------------------------------------------------ */
+/* RESPONSIVE — MOBILE                                     */
+/* ------------------------------------------------------ */
+
 @media (max-width: 768px) {
   .home-wrapper {
     width: 100%;
     height: 100%;
     border-radius: 0;
   }
-  
+
   .cards-wrapper {
-    flex-direction: column; /* Stack cards vertically */
-    height: 100%; /* Fill the available height */
-    gap: 0.5rem;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    gap: 0.7rem;
   }
 
   .card {
-    flex: 1; /* CRITICAL: Each card takes equal vertical space */
-    min-height: 0; /* CRITICAL: Allows cards to shrink properly */
-    min-width: unset; /* Reset min-width */
+    flex: 1;
+    min-height: 0;
     width: 100%;
   }
 
-  /* Disable horizontal expand/collapse logic on mobile */
+  /* Expand/collapse disabled */
   .card.expanded,
   .card.collapsed {
     flex: 1;
   }
-  
-  /* Make details always visible on mobile since there is no hover/expand */
+
+  /* Always visible details */
   .card-details {
     opacity: 1;
     max-height: 200px;
+    animation: none;
     margin-top: 1rem;
-    animation: none; /* Disable animation on load */
   }
 
   .card-content {
@@ -195,21 +240,20 @@
   }
 
   .card-title {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+  }
+
+  .card-subtitle,
+  .card-subtitle2 {
+    font-size: 1.2rem;
   }
 
   .card-description {
     font-size: 0.9rem;
-    margin-bottom: 1rem;
-    /* Hide long descriptions to prevent overflow */
-    display: -webkit-box;
-   
-    -webkit-box-orient: vertical;  
+   display: -webkit-box;
+/* -webkit-line-clamp: 3; */
+-webkit-box-orient: vertical;
+overflow: hidden;
     overflow: hidden;
-  }
-
-  .card-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
   }
 }

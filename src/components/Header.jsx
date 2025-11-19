@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaInfoCircle , FaPhone, FaHome } from "react-icons/fa";
+import { FaInfoCircle, FaUserTie, FaHome } from "react-icons/fa";
 import "./Header.css";
+import daksLogo from '../assets/primary/daks.png';
+
+// ⚠️ ASSUMPTION: The path for these assets should be relative to the component, 
+// similar to daksLogo, or just 'assets/primary/hX.png'.
+// Corrected Imports to match usage (using names h1, h2, h3, h4 for simplicity)
+import h4 from '../assets/primary/h4.png';
+import h3 from '../assets/primary/h3.png';
+import h2 from '../assets/primary/h2.png';
+import h1 from '../assets/primary/h1.png'; // Used as 'h1' in the JSX
 
 function Header() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -11,6 +20,10 @@ function Header() {
     navigate("/");
   };
 
+const handleAdminClick = () => {
+  navigate("/admin/dashboard");
+};
+
   return (
     <header className="header">
       <div className="header-container">
@@ -19,25 +32,27 @@ function Header() {
         <div className="logo">
           <Link to="/">
             <img
-              src="./src/assets/primary/daks.png"
+              src={daksLogo}
               alt="DAKS NDT Services Logo"
               className="logo-image"
             />
           </Link>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation - Updated with NDT Categories */}
         <nav className="main-nav">
           <ul>
             <li><Link to="/home">Home</Link></li>
-            <li><Link to="/broom-brush">Broom & Brush</Link></li>
-            <li><Link to="/healthcare">HealthCare</Link></li>
+            <li><Link to="/flawed-specimens">Flawed Specimens</Link></li>
+            <li>
+              <Link to="/CalibrationBlocks">Calibration Blocks</Link>
+            </li>
+
             <li><Link to="/product-catalogue">Product Catalogue</Link></li>
             <li><Link to="/company">Company</Link></li>
             <li><Link to="/career">Career</Link></li>
           </ul>
         </nav>
-
 
         {/* Actions */}
         <div className="header-actions">
@@ -47,9 +62,9 @@ function Header() {
             <FaHome />
           </div>
 
-          {/* Phone Button */}
-          <div className="contact-button">
-            <FaPhone />
+          {/* Admin Button - Updated */}
+          <div className="contact-button" onClick={handleAdminClick} title="Admin Login">
+            <FaUserTie />
           </div>
 
           {/* Envelope Hover Panel */}
@@ -115,7 +130,8 @@ function Header() {
                   {/* Block 1: NDT Inspection Support */}
                   <div className="contact-panel-item">
                     <img
-                      src="./src/assets/primary/h1.png"
+                      // 💡 CORRECTION: Use the imported variable name 'h1'
+                      src={h1} 
                       alt="NDT Support"
                       className="contact-item-image"
                     />
@@ -124,15 +140,14 @@ function Header() {
                       <p>
                         Reliable testing, expert technicians, and fast service — anytime, guaranteed quality.
                       </p>
-                      {/* Optional link */}
-                      {/* <Link to="/support" className="contact-link">Support</Link> */}
                     </div>
                   </div>
 
                   {/* Block 2: Contact & Service Areas */}
                   <div className="contact-panel-item">
                     <img
-                      src="./src/assets/primary/h2.png"
+                      // 💡 CORRECTION: Use the imported variable name 'h2'
+                      src={h2} 
                       alt="Service Areas"
                       className="contact-item-image"
                     />
@@ -141,18 +156,14 @@ function Header() {
                       <p>
                         We provide on-site NDT services across Tamil Nadu and throughout India, wherever your project is located.
                       </p>
-                      <div className="link-group">
-                        {/* Optional links */}
-                        {/* <Link to="/contact" className="contact-link">Contact</Link> */}
-                        {/* <Link to="/service-areas" className="contact-link">Service Areas</Link> */}
-                      </div>
                     </div>
                   </div>
 
                   {/* Block 3: Careers */}
                   <div className="contact-panel-item">
                     <img
-                      src="./src/assets/primary/h3.png"
+                      // 💡 CORRECTION: Use the imported variable name 'h3'
+                      src={h3} 
                       alt="Career"
                       className="contact-item-image"
                     />
@@ -161,8 +172,6 @@ function Header() {
                       <p>
                         Join our dedicated team of NDT professionals and build your career at the forefront of quality assurance.
                       </p>
-                      {/* Optional link */}
-                      {/* <Link to="/career" className="contact-link">Apply Now</Link> */}
                     </div>
                   </div>
 
@@ -171,12 +180,10 @@ function Header() {
                     <p className="career-text animated-text">
                       Build your future in a high-demand industry with DAKS NDT Services.
                     </p>
-
                   </div>
                 </div>
               </div>
             )}
-
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { FaLinkedin, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp, FaFacebookF, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
@@ -20,17 +20,27 @@ function Footer() {
 
         {/* Social Media Icons */}
         <div className="social-links">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
+          <a
+            href="https://in.linkedin.com/company/daks-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon linkedin"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
-            <FaInstagram />
+          <a href="https://wa.me/8778423621" target="_blank" rel="noopener noreferrer" className="social-icon FaWhatsapp">
+            <FaWhatsapp />
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
             <FaFacebookF />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
-            <FaYoutube />
+          <a
+            href="https://www.alphasonix.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon alpha-sonix"
+          >
+            <span className="as-icon">AS</span>
           </a>
         </div>
       </div>

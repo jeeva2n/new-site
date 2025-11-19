@@ -1,0 +1,180 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #666;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.modal-close:hover {
+  background-color: #f0f0f0;
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-image {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.modal-info {
+  flex: 1;
+  min-width: 300px;
+  padding: 30px;
+}
+
+.modal-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-category-tag {
+  color: #007bff;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.product-details h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.product-details p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.price-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.product-status {
+  margin-top: 20px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-badge.in-stock {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.out-of-stock {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-contact {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-contact:hover {
+  background-color: #0056b3;
+}
+
+.btn-download {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-download:hover {
+  background-color: #5a6268;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+  }
+  
+  .modal-info {
+    padding: 20px;
+  }
+}

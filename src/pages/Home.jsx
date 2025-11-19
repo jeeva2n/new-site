@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/Home.css';
+import ep1 from '../assets/primary/ep1.jpg';
+import ep2 from '../assets/primary/ep2.webp';
+import q1 from '../assets/primary/q1.jpeg';
+import q4 from '../assets/primary/q4.jpg';
 
 const Home = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -29,7 +33,7 @@ const Home = () => {
     subtitle: "inspect",
     subtitle2: "with precision",
     color: "#8FFF00",
-    image: "/src/assets/primary/ep1.jpg",
+    image: ep1,
     description:
       "Reference standards and flawed specimens. From ultrasonic testing to advanced radiography, we ensure your products meet the highest quality standards.",
     buttons: ["Home", "Aerospace", "Oil & Gas"],
@@ -40,7 +44,7 @@ const Home = () => {
     subtitle: "deliver",
     subtitle2: "reliable results",
     color: "#FF0066",
-    image: "/src/assets/primary/ep2.webp",
+    image: ep2,
     description:
       "Standard and customised NDT reference block for every inspection model.",
   },
@@ -50,7 +54,7 @@ const Home = () => {
     subtitle: "analyze",
     subtitle2: "materials",
     color: "#FF00FF",
-    image: "/src/assets/primary/q1.jpeg",
+    image: q1,
     description:
       "Precious Assure - each reference block is certified through advanced inspection and traceability.",
   },
@@ -60,7 +64,7 @@ const Home = () => {
     subtitle: "are",
     subtitle2: "NDT Experts",
     color: "#00FFFF",
-    image: "/src/assets/primary/q4.jpg",
+    image: q4,
     description:
       "Proven excellence through client experience.",
   },

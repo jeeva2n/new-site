@@ -1,0 +1,38 @@
+/* Container for the entire component */
+.content {
+  cursor: none; /* Hide the default mouse cursor */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Wrapper for all trail images */
+.content__img-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Important: Allows clicks/interactions to pass through to elements below */
+}
+
+/* Individual image trail element */
+.content__img {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px; /* Adjust size of trailing images as needed */
+  height: 300px; /* Adjust size of trailing images as needed */
+  overflow: hidden;
+  opacity: 0; /* Hidden by default, GSAP controls visibility/opacity */
+  border-radius: 8px; /* Optional: adds a slight rounded corner */
+}
+
+/* Inner element for the background image */
+.content__img-inner {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+}

@@ -54,12 +54,14 @@ function CalibrationBlocks() {
   });
 
   return (
-    <div className="calibration-blocks-container">
-      <div className="page-header">
-        <h1>Calibration Blocks</h1>
-        <p>Browse our complete range of calibration blocks for NDT testing standards</p>
-      </div>
+  <div className="calibration-blocks-container">
+    {/* Hero Banner */}
+    <div className="hero-banner">
+      <h1>Calibration Blocks</h1>
+      <p>Browse our complete range of calibration blocks for NDT testing standards</p>
+    </div>
 
+    <div className="content-wrapper">
       {/* Filters */}
       <div className="filters-section">
         <div className="search-bar">
@@ -142,20 +144,17 @@ function CalibrationBlocks() {
           )}
         </div>
       )}
-
-      {/* Debug log before modal */}
-      {console.log("Selected Product ID:", selectedProductId)}
-
-      {/* Modal */}
-
-        {selectedProductId && (
-        <SimpleProductModal
-          product={products.find((p) => p.id === selectedProductId)}
-          onClose={() => setSelectedProductId(null)}
-        />
-      )}
     </div>
-  );
+
+    {/* Modal stays outside wrappers */}
+    {selectedProductId && (
+      <SimpleProductModal
+        product={products.find((p) => p.id === selectedProductId)}
+        onClose={() => setSelectedProductId(null)}
+      />
+    )}
+  </div>
+);
 }
 
 export default CalibrationBlocks;

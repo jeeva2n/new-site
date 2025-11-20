@@ -22,6 +22,24 @@ function BroomBrush() {
     fetchProducts();
   }, []);
 
+  // Scroll reveal effect
+  useEffect(() => {
+    const reveal = () => {
+      const elements = document.querySelectorAll('.product-card');
+      elements.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', reveal);
+    reveal();
+    
+    return () => window.removeEventListener('scroll', reveal);
+  }, [products]);
+
   // Fetch flawed specimens products
   const fetchProducts = async () => {
     try {
@@ -55,100 +73,110 @@ function BroomBrush() {
 
   return (
     <div className="broom-brush-container">
-      <div className="page-header">
-        <h1>Flawed Specimens</h1>
-        <p>
-          Browse our complete range of flawed specimens for NDT validation and
-          training
-        </p>
-      </div>
+      <div className="page-container-wrapper">
+        
+        {/* Enhanced Header */}
+        <div className="page-header">
+          <h1>Flawed Specimens</h1>
+          <p>
+            Browse our complete range of flawed specimens for NDT validation and
+            training
+          </p>
+        </div>
 
-      {/* Filters */}
-      <div className="filters-section">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
+        {/* Filters */}
+        <div className="filters-section">
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+          </div>
+
+          <div className="category-filter">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`category-btn ${
+                  selectedCategory === category ? "active" : ""
+                }`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Products */}
+        {loading ? (
+          <div className="loading">Loading products...</div>
+        ) : (
+          <div className="products-container">
+            {filteredProducts.length > 0 ? (
+              <div className="products-grid">
+                {filteredProducts.map((product) => (
+                  <div key={product.id} className="product-card hardware-accelerated">
+                    <div className="product-image">
+                      <img
+                        src={`http://localhost:5001${product.image_url}`}
+                        alt={product.name}
+                        onError={(e) => {
+                          e.target.src = "/placeholder-image.jpg";
+                        }}
+                      />
+                    </div>
+
+                    <div className="product-info">
+                      <h3>{product.name}</h3>
+                      <p className="product-description">
+                        {product.description}
+                      </p>
+                      <p className="product-category">
+                        {product.category} • {product.subcategory}
+                      </p>
+
+                      <button
+                        className="view-details-btn"
+                        onClick={() => {
+                          console.log(
+                            "Open details for product ID:",
+                            product.id
+                          );
+                          setSelectedProductId(product.id);
+                        }}
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="no-products">
+                <p>No products found matching your criteria.</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Footer */}
+        <div className="page-footer">
+          <p>© 2024 DAKS TOOLS. All rights reserved.</p>
+        </div>
+
+        {/* Simple Modal */}
+        {selectedProductId && (
+          <SimpleProductModal
+            product={products.find((p) => p.id === selectedProductId)}
+            onClose={() => setSelectedProductId(null)}
           />
-        </div>
-
-        <div className="category-filter">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`category-btn ${
-                selectedCategory === category ? "active" : ""
-              }`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+        )}
+        
       </div>
-
-      {/* Products */}
-      {loading ? (
-        <div className="loading">Loading products...</div>
-      ) : (
-        <div className="products-container">
-          {filteredProducts.length > 0 ? (
-            <div className="products-grid">
-              {filteredProducts.map((product) => (
-                <div key={product.id} className="product-card">
-                  <div className="product-image">
-                    <img
-                      src={`http://localhost:5001${product.image_url}`}
-                      alt={product.name}
-                      onError={(e) => {
-                        e.target.src = "/placeholder-image.jpg";
-                      }}
-                    />
-                  </div>
-
-                  <div className="product-info">
-                    <h3>{product.name}</h3>
-                    <p className="product-description">
-                      {product.description}
-                    </p>
-                    <p className="product-category">
-                      {product.category} • {product.subcategory}
-                    </p>
-
-                    <button
-                      className="view-details-btn"
-                      onClick={() => {
-                        console.log(
-                          "Open details for product ID:",
-                          product.id
-                        );
-                        setSelectedProductId(product.id);
-                      }}
-                    >
-                      View Details
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="no-products">
-              <p>No products found matching your criteria.</p>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Simple Modal */}
-      {selectedProductId && (
-        <SimpleProductModal
-          product={products.find((p) => p.id === selectedProductId)}
-          onClose={() => setSelectedProductId(null)}
-        />
-      )}
     </div>
   );
 }
